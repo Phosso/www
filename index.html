@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta nema="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+   <header>
+       <div id="logo" onclick="slowScroll('#top')">
+        <span>Big cat's</span>
+       </div>
+       <div id="about">
+        <a href="#" title="Описание" onclick="slowScroll('#main')">Описание</a>
+        <a href="#" onclick="slowScroll('#overiew')" title="Преимущества" >Преимущества</a>
+        <a href="#" onclick="slowScroll('#contacts')" title="Контакты" >Контакты</a>
+        <a href="#" onclick="slowScroll('#faq')" title="Вопрос/ответ" >FAQ</a>
+           
+       </div>
+       
+   </header>
+  
+    <div id="top">
+        <h1>Кот - бог дивана</h1>
+        <h3>Без кота и жизнь не та</h3>
+    </div>         
+<!--Первый блок-->
+ 
+    <div id="main">
+        <div class="intro">
+            <h2>Здесь мы убедим вас взять кота</h2>
+            <span>Кратко о преимушествах "богов дивана"</span>
+        </div>
+        <div class="text">
+            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores ipsam omnis molestias similique, inventore explicabo cupiditate numquam consequuntur consectetur officiis, voluptatem tempora error illum. Vitae autem eaque reiciendis iure illum.</span>
+        </div>
+    </div>       
+ <!--Второй блок-->      
+
+    <div id="overiew">
+        <h2>Преимущества кошачьих</h2>
+        <h4>С котами лучше потому что:</h4>
+        
+        <div class="img">
+            <img src="img/2.jpg" alt="">
+            <span>У котов добрая натура</span>
+        </div>
+        <div class="img">
+            <img src="img/3.jpg" alt="">
+            <span>Они поддержат ваше хреновое настроение</span>
+        </div>
+        <div class="img">
+            <img src="img/4.jpg" alt="">
+            <span>Они вместе с вами будут есть в 3 часа ночи</span>
+        </div>
+        <div class="img">
+            <img src="img/5.jpg" alt="">
+            <span>Коты очень умные</span>
+        </div>
+        
+    </div>   
+    
+ <!--Третий блок-->  
+   
+<div id="contacts">
+    <center><h5>Обратная связь</h5></center>
+    <form id="form_input">
+        <label for="name">Имя <span>*</span> </label><br>
+        <input type="text" placeholder="Пиши имя, быро!" name="name" id="name"><br>
+        <label for="email">Мыло<span>*</span> </label><br>
+        <input type="email" placeholder="Не забудь про мыло" name="email" id="email"><br>
+        <label for="message">Ну и?<span>*</span> </label><br>
+        <textarea placeholder="Давай, пиши" name="message" id="message"></textarea><br>
+        <div id="mess_send" class="btn">Отправить в Великий Устюг</div>
+    </form>
+    
+</div>
+                        
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    function slowScroll(id) {
+        $('html, body').animate({
+          scrollTop: $(id).offset().top  
+        }, 500);
+    }
+    
+    $(document).on("scroll", function () {
+        if($(window).scrollTop() === 0)
+            $("header").removeClass("fixed");
+        else
+            $("header").attr("class", "fixed");
+    })
+    </script>
+    
+</body>
+</html>
